@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Adra</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="./components/angular-chart.js/dist/angular-chart.css">
+
+    <script src="./components/angular/angular.min.js"></script>
+    <script src="./components/angular-animate/angular-animate.min.js"></script>
+    <script src="./components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="./components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./components/Chart.js/Chart.min.js"></script>
+    <script src="./components/angular-chart.js/dist/angular-chart.js"></script>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/services/api.js"></script>
+    <script src="./js/controllers/controller.js"></script>
+
+
+  </head>
+  <body ng-app="adra">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            Adra
+          </a>
+          <p class="navbar-text">Real time statistics</p>
+        </div>
+      </div>
+    </nav>
+
+    <div ui-view></div>
+
+  </body>
+</html>
