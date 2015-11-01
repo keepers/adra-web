@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+public/components
 coverage
 .env
 .vscode
@@ -9,3 +10,4 @@ jsconfig.json
 *.todo
 *.sublime-workspace
 *.sublime-project
+
