@@ -3,14 +3,25 @@
 
   angular.module('adra-api', [])
 
-  .service('api', ['$http', function ($http) {
+  .constant('apiPath', 'http://localhost:9090')
 
-    var apiUrl = 'http://localhost:9090';
+  .factory('socket', ['socketFactory', 'apiPath', function (socketFactory, apiPath) {
+    return socketFactory({
+      prefix: 'emit~',
+      ioSocket: io.connect(apiPath)
+    });
+  }])
 
-    this.beneficiary = {
+  .service('api', ['$http', 'apiPath', function ($http, apiPath) {
+    this.beneficiaries = {
       find: function () {
-        return $http.get(apiUrl + '/beneficiary').then(function (res) {
+        return $http.get(apiPath + '/beneficiary').then(function (res) {
           return res.data;
+        });
+      },
+      stats: function () {
+        return $http.get(apiPath + '/beneficiary/stats').then(function (res) {
+          return res.data[0];
         });
       }
     };
