@@ -3,7 +3,8 @@
 
   angular.module('adra-api', [])
 
-  .constant('apiPath', 'http://localhost:9090')
+  // .constant('apiPath', 'http://localhost:9090')
+  .constant('apiPath', 'https://adra-api.herokuapp.com')
 
   .factory('socket', ['socketFactory', 'apiPath', function (socketFactory, apiPath) {
     return socketFactory({
