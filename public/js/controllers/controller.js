@@ -5,15 +5,25 @@
 
   .controller('BeneficiaryController', ['$scope', 'api', 'socket', function ($scope, api, socket) {
 
+    $scope.data = [];
+    $scope.labels = [];
+
+    var generateGraph = function(beneficiaries){
+      for (var key in beneficiaries) {
+        if (beneficiaries.hasOwnProperty(key) && key !== '_id') {
+          $scope.data.push(beneficiaries[key]);
+          $scope.labels.push(key);
+        }
+      }
+    };
+
     api.beneficiaries.stats().then(function (beneficiaries) {
-      $scope.data = [beneficiaries.totalDisables, beneficiaries.totalElders, beneficiaries.totalPregnants, beneficiaries.totalLactantMothers];
+      generateGraph(beneficiaries);
     });
 
     socket.on('stats', function (beneficiaries) {
-      $scope.data = [beneficiaries.totalDisables, beneficiaries.totalElders, beneficiaries.totalPregnants, beneficiaries.totalLactantMothers];
+      generateGraph(beneficiaries[0]);
     });
-
-    $scope.labels = ['Discapacitados', 'Ancianos', 'Madres embarazadas', 'Madres Lactantes'];
 
   }]);
 
