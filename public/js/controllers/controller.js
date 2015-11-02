@@ -8,6 +8,8 @@
     $scope.data = [];
     $scope.labels = [];
 
+    $scope.options = { animateRotate: true };
+
     var generateGraph = function(beneficiaries){
       for (var key in beneficiaries) {
         if (beneficiaries.hasOwnProperty(key) && key !== '_id') {
@@ -22,6 +24,7 @@
     });
 
     socket.on('stats', function (beneficiaries) {
+      $scope.options.animateRotate = false;
       generateGraph(beneficiaries[0]);
     });
 
