@@ -8,7 +8,9 @@
     $scope.data = [];
     $scope.labels = [];
 
-    $scope.options = { animateRotate: true };
+    $scope.options = {
+      animateRotate: true
+    };
 
     var generateGraph = function(beneficiaries){
       for (var key in beneficiaries) {
