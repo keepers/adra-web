@@ -1,10 +1,14 @@
 # ADRA CMS
 
-## Install
+### Install
 ```
-$ git clone https://github.com/ndelvalle/adra-web
+$ git clone https://github.com/keepers/adra-web.git
 $ cd adra-web
 $ npm install
 $ bower install
-$ node server
+```
+
+### Run
+```
+$ nodemon server
 ```
