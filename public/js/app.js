@@ -1,7 +1,12 @@
 (function () {
   'use strict';
 
-  angular.module('adra', ['adra-api', 'ui.router', 'chart.js', 'btford.socket-io'])
+  angular.module('adra', [
+    'adra-api',
+    'ui.router',
+    'chart.js',
+    'btford.socket-io'
+  ])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
