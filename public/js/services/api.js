@@ -3,8 +3,10 @@
 
   angular.module('adra-api', [])
 
-  // .constant('apiPath', 'http://localhost:9090')
-  .constant('apiPath', 'https://adra-api.herokuapp.com')
+  //@TODO: Implement gulp task to get process.env.API_URL
+  // and generate a service / constant
+  .constant('apiPath', 'http://localhost:9090')
+  //.constant('apiPath', 'https://adra-api.herokuapp.com')
 
   .factory('socket', ['socketFactory', 'apiPath', function (socketFactory, apiPath) {
     return socketFactory({
