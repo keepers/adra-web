@@ -16,7 +16,13 @@
       for (var key in beneficiaries) {
         if (beneficiaries.hasOwnProperty(key) && key !== '_id') {
           $scope.data.push(beneficiaries[key]);
-          $scope.labels.push(key);
+
+          var label = key
+          // insert a space before all caps
+          .replace(/([A-Z])/g, ' $1')
+          // uppercase the first character
+          .replace(/^./, function(str){ return str.toUpperCase(); });
+          $scope.labels.push(label);
         }
       }
     };
