@@ -4,15 +4,13 @@
   angular.module('adra')
 
   .controller('BeneficiaryController', ['$scope', 'api', 'socket', function ($scope, api, socket) {
-
-    $scope.data = [];
-    $scope.labels = [];
-
+    
     $scope.options = {
       animateRotate: true
     };
 
     var generateGraph = function(beneficiaries){
+      $scope.data   = [];
       $scope.labels = [];
       
       for (var key in beneficiaries) {
