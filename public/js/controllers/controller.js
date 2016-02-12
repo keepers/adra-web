@@ -13,6 +13,8 @@
     };
 
     var generateGraph = function(beneficiaries){
+      $scope.labels = [];
+      
       for (var key in beneficiaries) {
         if (beneficiaries.hasOwnProperty(key) && key !== '_id') {
           $scope.data.push(beneficiaries[key]);
